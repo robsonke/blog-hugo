@@ -7,12 +7,14 @@ slug: simple-google-maps-routeplanner
 title: Simple Google Maps routeplanner
 wordpress_id: 256
 categories:
-- Software
+- html
+- gmap
 tags:
 - google
 - jquery
 - LinkedIn
 - maps
+allowscripts: true
 ---
 
 Last week I was googling for a simple implementation of a routeplanner based on Google maps. Weirdly enough I didn't find a total solution or older ones based on the maps v2 API. So I decided to have a look at the API and In 15 minutes I had a working routeplanner. Which might explain why I found that less examples on the internet :). But for all other people who need a quick solution, I thought sharing would be good.
@@ -20,7 +22,7 @@ Last week I was googling for a simple implementation of a routeplanner based on 
 It's a very plain example based on the Google Maps v3 and a bit of jQuery but that can easily be avoided.
 
 First the necessary html:
-[code language="html"]
+``` html
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
@@ -107,38 +109,5 @@ function calcRoute()
 }
 ```
 
-Which results in:
 
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-
-
-## Plan your trip
-
-
-
-  City or zipcode:
-  
-  
-
-  
-  
-
-
-
-
-  
-  
 

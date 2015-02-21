@@ -33,10 +33,10 @@ MetaDataFormat = "toml"
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
-    highlight = "sunburst"
+    highlight = "github"
 
     # Displays under the author name in the sidebar, keep it short.
-    tagline = "My small steps in the world of software development"
+    tagline = "Small steps in the world of software development"
 
     # Metadata used to drive integrations.
     googleAnalytics = "UA-7307813-1"

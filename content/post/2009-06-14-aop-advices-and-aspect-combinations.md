@@ -7,11 +7,11 @@ slug: aop-advices-and-aspect-combinations
 title: AOP Advices and Aspect combinations
 wordpress_id: 153
 categories:
-- Software
+- java
+- spring
 tags:
 - AOP
 - java
-- LinkedIn
 - spring
 ---
 
@@ -27,12 +27,7 @@ Let's start with the note in the documentation:
 
 After searching a bit more information, since the text above not really explains why they're excluded, I found the following 2 "rules":
 
-
-
-	
   * Classes with annotations _@AspectJ_ and classes that implement or extend any other AOP component are excluded from the autoproxy. This is because they aren't target classes, and they perform tasks in Spring AOP infrastructure.
-
-	
   * Proxy is not applied to beans that implement the interfaces _BeanPostProcessor_ or _BeanFactoryPostProcessor_. The class _AnnotationAwareAspectJAutoProxyCreator_ implements the interface _BeanPostProcessor_, which allows the class to modify the life cycle of beans on which a proxy must be created and applied.
 
 
@@ -40,11 +35,11 @@ The first point here explains why Aspects are not proxied. The second point name
 
 So, conclusion:
 
-**Never use Aspects (@Apects) and proxy based transaction management on the same bean! **
+**_Never use Aspects (@Apects) and proxy based transaction management on the same bean!_**
 
 It's simple to avoid by creating a separate Aspect which advices other beans. Something like this:
 
-[code lang="java"]
+``` java
 @Aspect
 public class TestAspect
 {

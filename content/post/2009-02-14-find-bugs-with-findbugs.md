@@ -55,13 +55,7 @@ Findbugs now told me that I should add a check at the first line too. Pretty imp
 And this is just the top of the iceberg, see the link at the bottom about all kind of things which findBugs will search for. It opened my eyes and I'll use it in every project in the future! Keep up the good work.
 
 Interesting links:
-
-
-
 	
   * [Findbugs](http://findbugs.sourceforge.net/)
-
-	
   * [Kind of bugs](http://findbugs.sourceforge.net/bugDescriptions.html)
-
 

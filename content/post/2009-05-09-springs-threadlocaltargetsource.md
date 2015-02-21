@@ -22,41 +22,46 @@ So far I didn't have much experience with ThreadLocal's, they sound a bit evil t
 
 Now it's time for my example, to start with the bean config:
 
-[sourcecode lang="xml"]
+``` xml
 
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<bean id="testBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="targetSource" ref="testThreadLocalTargetSource" />
+</bean>
+<bean id="testBeanUtil" class="nl.tigrou.threadlocal.TestBeanUtil">
+<property name="testBean" ref="testBean" />
+</bean>
+<bean id="testThreadLocalTargetSource" class="org.springframework.aop.target.ThreadLocalTargetSource"
+destroy-method="destroy">
+<property name="targetBeanName" value="testTarget" />
+</bean>
+<bean id="testTarget" class="nl.tigrou.threadlocal.TestBeanImpl" scope="prototype">
+<property name="myValue" value="boe!" />
+</bean>
+</beans>
 
 ```
 
 A simple Pojo:
 
-[sourcecode lang="java"]
+``` java
 
 public class TestBeanImpl implements TestBean {
 
-private String myValue;
+  private String myValue;
 
-public void setMyValue(String myValue) {
-this.myValue = myValue;
-}
+  public void setMyValue(String myValue) {
+    this.myValue = myValue;
+  }
 
-public String getMyValue() {
-return myValue;
-}
+  public String getMyValue() {
+    return myValue;
+  }
 
 }
 
@@ -64,88 +69,83 @@ return myValue;
 
 A util class to test the proxy'ing even better:
 
-[sourcecode lang="java"]
+``` java
 
 public class TestBeanUtil {
 
-private static TestBean testBean;
+  private static TestBean testBean;
 
-public void setTestBean(TestBean testBean) {
-TestBeanUtil.testBean = testBean;
-}
+  public void setTestBean(TestBean testBean) {
+    TestBeanUtil.testBean = testBean;
+  }
 
-public static TestBean getTestBean() {
-return testBean;
-}
+  public static TestBean getTestBean() {
+    return testBean;
+  }
 }
 
 ```
 
 And a simple testclient with 2 testcases:
 
-[sourcecode lang="java"]
+``` java
 
 public class ThreadLocalTest {
 
-private ClassPathXmlApplicationContext context;
+  private ClassPathXmlApplicationContext context;
 
-public static void main(String[] args) {
-new ThreadLocalTest();
-}
+  public static void main(String[] args) {
+    new ThreadLocalTest();
+  }
 
-public ThreadLocalTest() {
+  public ThreadLocalTest() {
 
-context = new ClassPathXmlApplicationContext("applicationContext.xml");
+    context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-for(int i=0; i < 10; i++)
-{
-ThreadTest test = new ThreadTest(i);
-test.setName("Thread1-"+i);
-test.start();
-}
+    for(int i=0; i < 10; i++)
+    {
+      ThreadTest test = new ThreadTest(i);
+      test.setName("Thread1-"+i);
+      test.start();
+    }
 
-for(int i=0; i < 10; i++)
-{
-Thread2Test test2 = new Thread2Test(i);
-test2.setName("Thread2-"+i);
-test2.start();
-}
-}
+    for(int i=0; i < 10; i++)
+    {
+      Thread2Test test2 = new Thread2Test(i);
+      test2.setName("Thread2-"+i);
+      test2.start();
+    }
+  }
 
-private class ThreadTest extends Thread
-{
-private final int number;
+  private class ThreadTest extends Thread
+  {
+    private final int number;
 
-public ThreadTest(int number) {
-this.number = number;
+    public ThreadTest(int number) {
+      this.number = number;
+    }
 
-}
+    public void run() {
+      TestBean testBean = (TestBean) context.getBean("testBean");
 
-public void run() {
-TestBean testBean = (TestBean) context.getBean("testBean");
+      testBean.setMyValue(String.valueOf(number));
+      System.out.println(Thread.currentThread().getName() + ", bean value: " + testBean.getMyValue());
+    }
+  }
 
-testBean.setMyValue(String.valueOf(number));
-System.out.println(Thread.currentThread().getName() + ", bean value: " + testBean.getMyValue());
+  private class Thread2Test extends Thread
+  {
+    private final int number;
 
-}
-}
+    public Thread2Test(int number) {
+      this.number = number;
+    }
 
-private class Thread2Test extends Thread
-{
-private final int number;
-
-public Thread2Test(int number) {
-this.number = number;
-
-}
-
-public void run() {
-
-TestBeanUtil.getTestBean().setMyValue(String.valueOf(number));
-System.out.println(Thread.currentThread().getName() + ", bean value: " + TestBeanUtil.getTestBean().getMyValue());
-
-}
-}
+    public void run() {
+      TestBeanUtil.getTestBean().setMyValue(String.valueOf(number));
+      System.out.println(Thread.currentThread().getName() + ", bean value: " + TestBeanUtil.getTestBean().getMyValue());
+    }
+  }
 
 }
 

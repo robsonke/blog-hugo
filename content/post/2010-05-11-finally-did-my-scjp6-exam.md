@@ -7,10 +7,9 @@ slug: finally-did-my-scjp6-exam
 title: Finally did my SCJP6 exam!
 wordpress_id: 243
 categories:
-- Software
+- java
 tags:
 - java
-- LinkedIn
 ---
 
 Long time no blog, the explanation is here.
@@ -26,39 +25,20 @@ So that's it for now. I'm currently working on bookmarkeable ajax urls and back 
 Oh but now the most important, the result of my exam:
 
 
-## **PASSED with a 85% score!!!**
-
-
+### **Passed with a 85% score**
 
 What's next:
 
-
-
-	
-  * Training and collecting for [our goal](http://tigrou.nl/2009/11/12/duchenne-heroes-2010/) this year
-
-	
+  * Training and collecting for Duchenne Heroes 2010
   * Then thinking about another certification
-
-	
-  * Drinking a beer to celebrate my score :)
-
+  * Drinking a beer to celebrate my score
 
 Tips:
 
-	
   * Be very secure!! Most of my mistakes were not noticing minor, non-head braking things.
-
-	
   * Read a good book, make notes, re-read those notes several times
-
-	
   * Practice as much as you can on mock tests (for example examlab.tk)
-
-	
   * Visit the Javaranch SCJP forum, contains a lot of useful information
-
-	
   * Have fun!
 
 

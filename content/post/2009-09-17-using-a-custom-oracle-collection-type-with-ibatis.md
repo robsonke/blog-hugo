@@ -7,11 +7,10 @@ slug: using-a-custom-oracle-collection-type-with-ibatis
 title: Using a custom Oracle collection type with iBatis
 wordpress_id: 162
 categories:
-- Software
+- java
 tags:
 - iBatis
 - java
-- LinkedIn
 ---
 
 Some months ago I came across a problem with the more complex custom Oracle types in combination with iBatis. I thought that it would be nice to share it with you. In my case I had to link a list of objects in Java to an array of structs in SQL (Oracle). 
@@ -20,7 +19,7 @@ The biggest part of the trick is inside a custom type handler, which is actually
 
 The code will show you the rest, because once you know how to deal with this, other cases are quite easy.
 
-[code lang="java"]
+``` java
 package nl.tigrou.test;
 
 import java.sql.Connection;
@@ -123,7 +122,8 @@ public class QuantityListTypeHandler implements TypeHandlerCallback
 
 And the corresponding query in one of your xml mapping files. The magic is all inside the inline parameter.
 
-[code lang="sql"]
+``` sql
+
 SELECT * FROM sometable x
 LEFT JOIN TABLE (
   CAST

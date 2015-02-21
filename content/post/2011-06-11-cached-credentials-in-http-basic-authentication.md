@@ -7,7 +7,7 @@ slug: cached-credentials-in-http-basic-authentication
 title: Cached credentials in http basic authentication
 wordpress_id: 249
 categories:
-- Java
+- java
 tags:
 - java
 - LinkedIn
