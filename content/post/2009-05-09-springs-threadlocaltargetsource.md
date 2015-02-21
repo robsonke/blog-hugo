@@ -40,7 +40,7 @@ Now it's time for my example, to start with the bean config:
 
 
 
-[/sourcecode]
+```
 
 A simple Pojo:
 
@@ -60,7 +60,7 @@ return myValue;
 
 }
 
-[/sourcecode]
+```
 
 A util class to test the proxy'ing even better:
 
@@ -79,7 +79,7 @@ return testBean;
 }
 }
 
-[/sourcecode]
+```
 
 And a simple testclient with 2 testcases:
 
@@ -149,7 +149,7 @@ System.out.println(Thread.currentThread().getName() + ", bean value: " + TestBea
 
 }
 
-[/sourcecode]
+```
 
 The above testclient starts 10 x 2 threads where both different threadclasses read and set the value in the threadlocal. The result in the console is:
 

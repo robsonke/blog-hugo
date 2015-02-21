@@ -55,6 +55,6 @@ public class TestAspect
 
   }
 }
-[/code]
+```
 
 That's it! At the moment I'm working on the website of my local athletics club, with [CodeIgniter](http://www.codeigniter.com) I'm finally enjoying PHP programming again.

@@ -17,7 +17,7 @@ Some months ago I was looking for a solution to my performance issue in [Apache 
 
 Implementation of a ReferenceInsertionEventHandler:
 
-[code language="java"]
+``` java
 package nl.tigrou.velocity;
 
 import java.util.List;
@@ -55,17 +55,17 @@ public class OnDemandTagReferenceHandler implements ReferenceInsertionEventHandl
     return value;
   }
 }
-[/code]
+```
 
 
 All what's left is registering this event handler to your context. For example programmatically:
 
-[code language="java"]
+``` java
 Velocity.init();   
 ctx = new VelocityContext();   
 EventCartridge ec = new EventCartridge(); 
 ec.addEventHandler(new OnDemandTagReferenceHandler()); 
 ec.attachToContext(ctx);
-[/code]
+```
 
 Next topic will probably be about documenting webservices. I'm currently stucked in a good solution.

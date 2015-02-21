@@ -16,7 +16,7 @@ Last week I needed a php method which helps me with converting a Mysql result in
 
 Disclaimer: I'm not a professional php'er so there's a big chance that this is not the most easy or fastest way. But anyway, it works well for big result sets.
 
-[code language="php"]
+``` php
 $original = array
 (
     "1" => array
@@ -98,12 +98,12 @@ function createTree($original, $keys, $level = 0)
 
   return $converted;
 }
-[/code]
+```
 
 
 
 The output:
-[code language="html"]
+``` html
 Array
 (
     [mtb] => Array
@@ -171,4 +171,4 @@ Array
         )
 
 )
-[/code]
+```

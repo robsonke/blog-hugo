@@ -119,7 +119,7 @@ public class QuantityListTypeHandler implements TypeHandlerCallback
     return value;
   }
 }
-[/code]
+```
 
 And the corresponding query in one of your xml mapping files. The magic is all inside the inline parameter.
 
@@ -131,7 +131,7 @@ LEFT JOIN TABLE (
     #quantities,handler=quantityListTypeHandler,jdbcType=STRUCT,javaType=Quantity# AS QuantityList
   )
 ) s ON (s.identifier = x.id)
-[/code]
+```
 
 **BTW, if you haven't noticed it yet, [iBatis 3](http://ibatis.apache.org/) is about to release. Check out the release candidates because they did an awesome job!**
 

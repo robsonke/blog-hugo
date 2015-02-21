@@ -43,11 +43,11 @@ First the necessary html:
   <input type="submit" value="calculate"/>
 </form>
 <div id="directions"></div>
-[/code]
+```
 
 
 And the Javascript:
-[code language="javascript"]
+``` javascript
 $(document).ready(function()
 {
   initialize();
@@ -105,7 +105,7 @@ function calcRoute()
     }
   });
 }
-[/code]
+```
 
 Which results in:
 

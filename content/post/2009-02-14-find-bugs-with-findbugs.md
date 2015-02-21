@@ -7,7 +7,7 @@ slug: find-bugs-with-findbugs
 title: Find bugs with findbugs
 wordpress_id: 12
 categories:
-- Software
+- java
 tags:
 - Eclipse
 - java
@@ -21,35 +21,35 @@ Lets take a look at some of the bugs it mentioned to me. I've made the examples 
 **1. Dividing integers and assigning the result to a double**
 
 I'll use the example from findBugs itself:
-[sourcecode language='java']
+``` java
 int x = 2;
 int y = 5;
 // Wrong: yields result 0.0
 double value1 =  x / y;
 // Right: yields result 0.4
 double value2 =  x / (double) y;
-[/sourcecode]
+```
 **2. Creating instances of String, Long, Integer  etc**
 
 This is not really a bug but just good thing to remember, there are three ways to create an instance:
-[sourcecode language='java']
+``` java
 String s = new String("foo"); // which I often used
 String s = "foo";
 // or
 String s = String.valueOf("foo"); // these last two could be up to 3,5 times faster then the one above (based on jvm caching)
-[/sourcecode]
+```
 
 **3. Null pointer dereference**
 
 Normally you always catch possible null values. Anyway, in my case I used a variable halfway a method and added also a null check, but there was just one line of code 20 lines higher which could cause problems:
-[sourcecode language='java']
+``` java
 private void foo(Object o){
 
 String s = (String) o;
 /* 20 lines of code which are not using s */
 if(s != null) print(s);
 }
-[/sourcecode]
+```
 Findbugs now told me that I should add a check at the first line too. Pretty impressive in my opinion!
 
 And this is just the top of the iceberg, see the link at the bottom about all kind of things which findBugs will search for. It opened my eyes and I'll use it in every project in the future! Keep up the good work.

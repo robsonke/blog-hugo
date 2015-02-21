@@ -20,7 +20,7 @@ The solution contains two parts, a custom FeedbackPanel and an implementation of
 
 Custom FeedbackPanel:
 
-[code language="java"]
+``` java
 private class UniqueMessagesFeedbackPanel extends FeedbackPanel
   {
     private UniqueMessageFilter filter = new UniqueMessageFilter();
@@ -39,14 +39,14 @@ private class UniqueMessagesFeedbackPanel extends FeedbackPanel
       setFilter(filter);
     }
   }
-[/code]
+```
 
 
 
 And the filter class:
 
 
-[code language="java"]
+``` java
 public class UniqueMessageFilter implements IFeedbackMessageFilter
   {
     List<FeedbackMessage> messages = new ArrayList<FeedbackMessage>();
@@ -67,7 +67,7 @@ public class UniqueMessageFilter implements IFeedbackMessageFilter
       return true;
     }
   }
-[/code]
+```
 
 
 

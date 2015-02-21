@@ -20,7 +20,7 @@ The used keys are defined by a simple enum:
 
 
 
-[code language="java"]
+``` java
 
 private enum Param {
 LANGUAGE("lan"), THEME("theme");
@@ -36,7 +36,7 @@ return value;
 }
 };
 
-[/code]
+```
 
 
 
@@ -81,7 +81,7 @@ So how does that look like, lets start with the 2 overridden methods in my WebAp
 
 
 
-[code language="java"]
+``` java
 
 @Override
 protected IRequestCycleProcessor newRequestCycleProcessor() {
@@ -99,7 +99,7 @@ public Session newSession(Request request, Response response) {
 return new CustomSession(request);
 }
 
-[/code]
+```
 
 
 
@@ -120,7 +120,7 @@ Lets take a look now to our custom RequestCodingStrategy where most of the magic
 
 
 
-[code language="java"]
+``` java
 
 public class ParamUrlCodingStrategy extends RequestCodingStrategy {
 
@@ -266,7 +266,7 @@ return super.urlCodingStrategyForPath(newPath);
 
 }
 
-[/code]
+```
 
 
 

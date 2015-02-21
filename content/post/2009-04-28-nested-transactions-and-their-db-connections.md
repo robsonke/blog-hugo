@@ -75,7 +75,7 @@ Let's start with the Spring application context:
 
 
 
-[/sourcecode]
+```
 
 The only interesting thing in here is the tx:advice element defining the right propagation settings.
 
@@ -95,7 +95,7 @@ List cities = cityService.getCities(country.getCode());
 country.setCities(cities);
 }
 
-[/sourcecode]
+```
 
 That's all! Now enable the debug logging on for example the org.springframework.jdbc.datasource package and you'll see something like this:
 
