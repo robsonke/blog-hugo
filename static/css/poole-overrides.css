@@ -26,6 +26,11 @@ h1 {
 h2,h3 {
   color: #515151;
 }
+
+div.post h2, div.post h3 {
+  border-bottom: 1px solid #C2C2C2;
+}
+
 .theme-base-rob .sidebar {
   background-color: #878686;
 }
