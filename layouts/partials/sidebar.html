@@ -7,10 +7,14 @@
     </div>
 
     <ul class="sidebar-nav">
+    <!-- added a back to home link, a hr line below list and a rss feed link -->
+      <li class="sidebar-nav-item"><a href="/">Back to home</a></li>
       {{ range .Site.Menus.main }}
       <li class="sidebar-nav-item"><a href="{{ .Url }}">{{ .Name }}</a></li>
       {{end}}
+      <li class="sidebar-nav-item"><a href="/index.xml" target="blank">RSS</a></li>
     </ul>
+    <hr/>
 
     <ul class="sidebar-nav">
       {{ with .Site.Params.github }}<li class="sidebar-nav-item"><a href="{{ . }}">GitHub</a></li>{{ end }}
@@ -19,7 +23,7 @@
       {{ with .Site.Params.facebook }}<li class="sidebar-nav-item"><a href="{{ . }}">Facebook</a></li>{{ end }}
       {{ with .Site.Params.twitter }}<li class="sidebar-nav-item"><a href="{{ . }}">Twitter</a></li>{{ end }}
     </ul>
-
+    <!-- removed copyright and license links -->
     <p>Powered by <a href="http://hugo.spf13.com">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
   </div>
 </div>
