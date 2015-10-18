@@ -4,7 +4,7 @@ comments: true
 date: 2015-03-01 16:40:23+00:00
 layout: post
 slug: alfred-workflow-manage-tomcat
-title: An Alfred workflow to manage tomcat instances in Iterm2
+title: An Alfred workflow to manage tomcat instances in iTerm2
 categories:
 - Alfred
 - Tomcat
@@ -12,7 +12,7 @@ categories:
 
 I've always disliked repeating tasks, earlier when working on Windows. It was one of the main reasons to switch to Mac osx years ago. Writing small but effective scripts makes my live easy every day. So once I discovered [Alfred](http://www.alfredapp.com/) I loved it immediately. Earlier I used Quicksilver, not bad either but Alfred is just awesome. Especially with the paid extensions in the powerpack. I have workflows for daily tasks as opening ssh sessions, setting up vpn's, open finder windows and killing processes. 
 
-But I still was struggling with Apache Tomcat. Somehow this is not that easy to handle as with a dos box under Windows. I already wrote some wrapping Bash scripts that start Tomcat and keep logs open and shutdown it nicely, but I always had to open/search the right Iterm2 tabs. There must be a better way! And yet there is. Although I hoped to find a ready to use workflow on the internet, it couldn't find one. So I gave it a shot and wrote my own workflow. I never used Applescript before but it was fairly simple, together with a good amount of examples on the internet.
+But I still was struggling with Apache Tomcat. Somehow this is not that easy to handle as with a dos box under Windows. I already wrote some wrapping Bash scripts that start Tomcat and keep logs open and shutdown it nicely, but I always had to open/search the right iTerm2 tabs. There must be a better way! And yet there is. Although I hoped to find a ready to use workflow on the internet, it couldn't find one. So I gave it a shot and wrote my own workflow. I never used Applescript before but it was fairly simple, together with a good amount of examples on the internet.
 
 Let's start with the end result in Alfred:
 ![End result](alfred-workflow-screenshot.jpg)
@@ -38,7 +38,7 @@ EOB
 ```
 
 ## Step 2: an Applescript
-This is the main part of this workflow. It's going to do several things but in general: find iterm2, open a new session with a specific profile, give the iterm2 tab a name, start tomcat and make the Iterm2 window the active one. The startup is done with a custom run.sh, that's doing a startup plus log open: "./startup.sh && tail -f ../logs/catalina.out".
+This is the main part of this workflow. It's going to do several things but in general: find iTerm2, open a new session with a specific profile, give the iTerm2 tab a name, start tomcat and make the iTerm2 window the active one. The startup is done with a custom run.sh, that's doing a startup plus log open: "./startup.sh && tail -f ../logs/catalina.out".
 
 ```
 on alfred_script(q)
