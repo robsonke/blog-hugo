@@ -1,0 +1,16 @@
+
+h1.header.center.teal-text.text-lighten-2 {
+  color: #eee !important;
+  font-size: 2.5rem;
+}
+h5.header.col.s12.light {
+  color: #eee !important;
+}
+
+div.parallax img {
+  opacity: 0.4;
+}
+
+h2 {
+  font-size: 2.0rem !important;
+}

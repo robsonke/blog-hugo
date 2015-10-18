@@ -3,7 +3,7 @@ Blog for tigrou.nl, build with http://gohugo.io/
 
 ### Publish
 # build files for deployment + deploy to github
-hugo --baseUrl=http://www.tigrou.nl --theme=hyde-x
+hugo --baseUrl=http://www.tigrou.nl --theme=material-design
 
 ### New post
 
@@ -13,8 +13,8 @@ hugo --baseUrl=http://www.tigrou.nl --theme=hyde-x
 Make sure that all assets of the post (images, videos etc) are saved to `static/the-url-of-the-blog-post/some-image.png`
 
 #### previewing:
-hugo server --watch -t hyde-x
+hugo server --watch -t material-design
 #### or non listening
-hugo server --theme=hyde-x --buildDrafts
+hugo server --theme=material-design --buildDrafts
 
 It will be accessible at `localhost:1313`

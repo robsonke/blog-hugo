@@ -1,9 +1,12 @@
 baseurl = "http://www.tigrou.nl"
 languageCode = "en-us"
 title = "Rob's blog"
+paginate = 9 # To specify a multiple of 3
+theme="material-design"
+copyright = "© 2015 Copyright Rob Sonke"
 
 
-#disqusShortname = "your_disqus_shortname" # Optional, enable Disqus integration
+
 MetaDataFormat = "toml"
 
 [author]
@@ -22,31 +25,14 @@ MetaDataFormat = "toml"
 # All parameters below here are optional and can be mixed and matched.
 #
 [params]
-    # Used when a given page doesn't set its own.
-    defaultDescription = "Personal blog of Rob Sonke, mostly about any kind of software development"
-    defaultKeywords = "rob,sonke,tigrou,blog,java,php,spring,javascript,angularjs,typescript"
+    description = "Personal blog of Rob Sonke, mostly about any kind of software development"
 
-    # Changes sidebar background and link/accent colours.
-    # See below for more colour options.
-    # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
-    theme = "theme-base-rob layout-reverse"
+    headerCover = "header2.jpg"
+    googleAnalyticsUserID = "UA-7307813-1"
 
-    # Select a syntax highight.
-    # Check the static/css/highlight directory for options.
-    highlight = "github"
-
-    # Displays under the author name in the sidebar, keep it short.
-    tagline = "Small steps in the world of software development"
-
-    # Metadata used to drive integrations.
-    googleAnalytics = "UA-7307813-1"
-    gravatarHash = "1218fc19050990668e7b1bec869f0a1b"
-
-    # Sidebar social links, avoid enabling too many of these if possible.
-    # These should be full URLs.
-    github = "https://github.com/robsonke"
-    linkedin = "https://nl.linkedin.com/in/robsonke"
-    facebook = "https://www.facebook.com/rob.sonke"
-    twitter = "https://twitter.com/rsonke"
+    github = "robsonke"
+    linkedin = "robsonke"
+    facebook = "rob.sonke"
+    twitter = "rsonke"
 
 
