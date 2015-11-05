@@ -5,8 +5,8 @@ layout: post
 slug: gradle-publish-library
 title: Publish your Java libraries to a Maven repository with Gradle
 categories:
-- Gradle
-- Java
+- gradle
+- java
 ---
 
 ## Introduction
