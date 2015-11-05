@@ -6,7 +6,7 @@ slug: javaone-rookie-experience
 title: A JavaOne rookie experience
 categories:
 - java
---- 
+---
 
 Being part of JavaOne this year and including oracle open world as well was pretty special.  As a Java developer you know that JavaOne was always the conference to go to. With Oracle acquiring Sun this has changed according to people who experienced both. Nevertheless it was pretty excited and being there on invitation of Oracle is something I'm oracle grateful for. With an a absense of 20 years in the US being back here was another good thing. I enjoyed the politeness and kindness of the people. With a short touristic visit of San Francisco it was made complete. 
 
