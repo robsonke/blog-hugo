@@ -11,13 +11,15 @@ categories:
 Being part of JavaOne this year and including oracle open world as well was pretty special.  As a Java developer you know that JavaOne was always the conference to go to. With Oracle acquiring Sun this has changed according to people who experienced both. Nevertheless it was pretty excited and being there on invitation of Oracle is something I'm oracle grateful for. With an a absense of 20 years in the US being back here was another good thing. I enjoyed the politeness and kindness of the people. With a short touristic visit of San Francisco it was made complete. 
 
 I decided to write a short blog on my experiences and my opinions on what I heard. There were many tracks to follow but looking at the subjects, the scope was pretty narrow. The following things were popular:
-* Microservices
-* Docker
-* Lambas/streams
-* Cloud computing
-* Continuous delivery / integration
+
+ * Microservices
+ * Docker
+ * Lambas/streams
+ * Cloud computing
+ * Continuous delivery / integration
 
 This didn't matter to me anyway as this has my interest too. And maybe not a total coincidence, they all cover the same benefits / promises:
+
 * Auto scaling
 * Isolation
 * Easy and often deployment
@@ -43,6 +45,7 @@ Learned also one new setting for tsconfig.json to become strict on any missing t
 ```
 
 My homework for now is to dive deeper into technologies I found interesting, mainly:
+
 * Kubernetes
 * Open shift
 * Cloud foundry
@@ -52,6 +55,7 @@ My homework for now is to dive deeper into technologies I found interesting, mai
 The oracle appreciation event with a performance of Elton John and beck made it next to learning full week, also even more fun. And I enjoyed meeting several Dutch people on the NLJUG after party. Feeling a true member now with a NLJUG shirt even though I'm missing JFall this year :). 
 
 Slides of sessions I found interesting and were published already:
+
 * http://www.slideshare.net/SanderMak/typescript-coding-javascript-without-the-pain
 * http://www.slideshare.net/ArjanSchaaf/zero-downtimejavadeploymentswithdockerandkubernetes
 
